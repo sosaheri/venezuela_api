@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\BasicInfoController;
 use Illuminate\Http\Request;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
-use Illuminate\Routing\RouteGroup;
+use App\Http\Controllers\BasicInfoController;
+use App\Http\Controllers\BCVScraperController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,6 @@ Route::group(
 Route::group(
     ['middleware' => ['auth:sanctum']], function () {
         Route::get('/info', [BasicInfoController::class,'info']);
+        Route::get('/bcv_rate', [BCVScraperController::class,'getRate']);
     }
 );
