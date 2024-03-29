@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BCVScraperController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,8 @@ Route::get(
         return view('welcome');
     }
 );
+
+Route::get('/bcv', [BCVScraperController::class,'getRate']);
 
 Route::get(
     '/home', function () {
