@@ -23,6 +23,7 @@ class BCVScraperController extends Controller
         $valorEuro = $euroRate->filter('.col-sm-6.col-xs-6.centrado strong')->text();
 
         $rates = [
+            'date' => now(),
             'usd' => $valorDolar,
             'eur' => $valorEuro
         ];

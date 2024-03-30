@@ -20,7 +20,6 @@ Route::get(
     }
 );
 
-Route::get('/bcv', [BCVScraperController::class,'getRate']);
 
 Route::get(
     '/home', function () {
